@@ -1,24 +1,23 @@
-# README
+# Daily Mood Mailer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails application for sharing your mood via email.
 
-Things you may want to cover:
+After cloning, follow these steps to run locally:
 
-* Ruby version
+```
+bundle install
+rails db:{create,migrate}
+rails s
+```
 
-* System dependencies
+Please note: this app is configured to _not_ send emails in development.
 
-* Configuration
+### Branches
 
-* Database creation
+- `main`: Email will be sent synchronously, starting from `MailersController#create`.
+- `background_workers_complete`: Completed code from Introduction to Background Workers class. Emails are sent using Sidekiq and Redis. _this branch will be pushed after class on 03/01/2022_
 
-* Database initialization
+### Notable Technologies / Dependencies
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Sidekiq](https://github.com/mperham/sidekiq/wiki/Getting-Started)
+- [Redis](https://formulae.brew.sh/formula/redis)
